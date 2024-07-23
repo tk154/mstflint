@@ -65,13 +65,16 @@ libmlxcfg_la_SOURCES = mlxcfg_status.h mlxcfg_utils.h mlxcfg_utils.cpp mlxcfg_vi
         mlxcfg_expression.h mlxcfg_expression.cpp \
         mlxcfg_db_items.h mlxcfg_db_items.cpp \
         mlxcfg_db_manager.h mlxcfg_db_manager.cpp mlxcfg_param.h mlxcfg_param.cpp mlxcfg_tlv.h mlxcfg_tlv.cpp \
-        mlxcfg_commander.h mlxcfg_commander.cpp mlxcfg_generic_commander.h mlxcfg_generic_commander.cpp
+        mlxcfg_commander.h mlxcfg_commander.cpp mlxcfg_generic_commander.h mlxcfg_generic_commander.cpp \
+        mlxcfg_param_lib.h mlxcfg_param_lib.cpp mlxcfg_4th_gen_commander.h mlxcfg_4th_gen_commander.cpp
 
 libmlxcfg_la_DEPENDENCIES = \
     $(top_builddir)/mft_utils/libmftutils.la \
     $(top_builddir)/cmdif/libcmdif.la \
     $(top_builddir)/reg_access/libreg_access.la \
+    $(top_builddir)/reg_access/libmlxconfig_4th_gen_regsiters.la \
     $(top_builddir)/tools_layouts/libtools_layouts.la \
+    $(top_builddir)/tools_layouts/libmlxconfig_4th_gen_layouts.la \
     $(top_builddir)/${MTCR_CONF_DIR}/libmtcr_ul.la \
     $(top_builddir)/dev_mgt/libdev_mgt.la \
     $(top_builddir)/fw_comps_mgr/libfw_comps_mgr.la \
@@ -86,7 +89,9 @@ mstconfig_DEPENDENCIES = \
     $(top_builddir)/mft_utils/libmftutils.la \
     $(top_builddir)/cmdif/libcmdif.la \
     $(top_builddir)/reg_access/libreg_access.la \
+    $(top_builddir)/reg_access/libmlxconfig_4th_gen_regsiters.la \
     $(top_builddir)/tools_layouts/libtools_layouts.la \
+    $(top_builddir)/tools_layouts/libmlxconfig_4th_gen_layouts.la \
     $(top_builddir)/${MTCR_CONF_DIR}/libmtcr_ul.la \
     $(top_builddir)/dev_mgt/libdev_mgt.la \
     $(top_builddir)/fw_comps_mgr/libfw_comps_mgr.la \

@@ -39,7 +39,9 @@
 
 #include <set>
 #include <mtcr.h>
+#include "mlxcfg_4th_gen_commander.h"
 #include "mlxcfg_generic_commander.h"
+#include "mlxcfg_param_lib.h"
 #include "mlxcfg_utils.h"
 
 using namespace std;
@@ -71,7 +73,7 @@ Commander* Commander::create(std::string device, std::string dbName, bool forceC
     Commander* cmdr = NULL;
     try
     {
-        cmdr = create(mf, dbName, deviceType);
+        cmdr = create(mf, device, dbName, deviceType);
     }
     catch (MlxcfgException& exp)
     {
@@ -82,7 +84,7 @@ Commander* Commander::create(std::string device, std::string dbName, bool forceC
     return cmdr;
 }
 
-Commander* Commander::create(mfile* mf, std::string dbName, Device_Type deviceType)
+Commander* Commander::create(mfile* mf, std::string device, std::string dbName, Device_Type deviceType)
 {
     dm_dev_id_t deviceId = DeviceUnknown;
     u_int32_t hwDevId, hwRevId;
@@ -104,6 +106,10 @@ Commander* Commander::create(mfile* mf, std::string dbName, Device_Type deviceTy
             dbName = getDefaultDBName(dm_dev_is_switch(deviceId));
         }
         commander = new GenericCommander(mf, dbName, deviceType);
+    }
+    else if (dm_is_4th_gen(deviceId))
+    {
+        commander = new FourthGenCommander(mf, device);
     }
     else
     {

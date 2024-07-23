@@ -38,7 +38,7 @@ AM_CPPFLAGS = \
 
 AM_CFLAGS = -W -Wall -g -MP -MD $(COMPILER_FPIC)
 
-noinst_LTLIBRARIES = libreg_access.la
+noinst_LTLIBRARIES = libreg_access.la libmlxconfig_4th_gen_regsiters.la
 
 libreg_access_la_SOURCES = \
     reg_access.c \
@@ -49,6 +49,10 @@ libreg_access_la_SOURCES = \
 libreg_access_la_DEPENDENCIES = $(top_builddir)/tools_layouts/libtools_layouts.la
 
 libreg_access_la_LIBADD = $(libreg_access_la_DEPENDENCIES)
+
+libmlxconfig_4th_gen_regsiters_la_SOURCES = mlxconfig_4th_gen_registers.c mlxconfig_4th_gen_registers.h
+libmlxconfig_4th_gen_regsiters_la_DEPENDENCIES = $(top_srcdir)/tools_layouts/libmlxconfig_4th_gen_layouts.la
+libmlxconfig_4th_gen_regsiters_la_LIBADD = $(libmlxconfig_4th_gen_regsiters_la_DEPENDENCIES)
 
 RREG_ACCESS_SO = rreg_access.so
 reg_access_pylibdir = $(libdir)/mstflint/python_tools/

@@ -45,6 +45,9 @@
 #define IDENT3 "\t\t"
 #define IDENT4 IDENT2 IDENT
 
+#define FIFTH_GENERATION_LIST "Connect-IB/Connect-X4/LX"
+#define FOURTH_GENERATION_LIST "ConnectX3/Pro"
+
 #include <string>
 #include <vector>
 

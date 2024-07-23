@@ -44,6 +44,7 @@
 #include <cable_access/cdb_cable_commander.h>
 #endif
 
+#include "mlxcfg_4th_gen_commander.h"
 // #include "mlxcfg_lib.h"
 #include "mlxcfg_commander.h"
 #include "mlxcfg_view.h"

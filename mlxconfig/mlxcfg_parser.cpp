@@ -142,6 +142,14 @@ void MlxCfg::printHelp()
            MLXCFG_NAME " -d " MST_DEV_EXAMPLE2 " -f conf_file set_raw");
     printf(IDENT2 "%-35s: %s\n", "To reset configuration", MLXCFG_NAME " -d " MST_DEV_EXAMPLE " reset");
     printf("\n");
+    printf(IDENT "Supported devices:\n");
+    printf(IDENT2 "4th Generation devices: ConnectX3, ConnectX3-Pro (FW 2.31.5000 and above).\n");
+    printf(IDENT2 "5th Generation devices: BlueField, BlueField2, BlueField3, ConnectIB, ConnectX4, ConnectX4-LX,\n");
+    printf(IDENT4 "                    ConnectX5, connectX5-Ex, ConnectX6, ConnectX6-DX, ConnectX6-LX, ConnectX7.\n");
+    printf(IDENT2 "Switches: Switch-IB, Switch-IB2,Spectrum, Spectrum2, Spectrum3, Spectrum4, Quantum, Quantum2.\n");
+    printf("\n");
+    printf(IDENT "Note: query device to view supported configurations by Firmware.\n");
+    printf("\n");
 }
 
 void MlxCfg::printVersion()
